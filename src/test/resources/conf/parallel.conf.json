@@ -1,0 +1,29 @@
+{
+  "server": "https://*******:*******@hub.lambdatest.com/wd/hub",
+  "user": "*******",
+  "key": "*******",
+
+  "capabilities": {
+    "build": "LambdaTest Sample Run",
+    "visual": true,
+    "video": true,
+    "network": true,
+    "console": "true",
+    "selenium_version": "4.0.0",
+    "w3c": true,
+    "plugin": "java-selenide"
+  },
+
+  "environments": {
+    "chrome": {
+      "platform": "windows 10",
+      "browserName": "chrome",
+      "version":"86.0"
+    },
+    "edge": {
+      "platform": "macOS Sierra",
+      "browserName": "edge",
+      "version":"87.0"
+    }
+  }
+}
