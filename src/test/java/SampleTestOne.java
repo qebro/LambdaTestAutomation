@@ -37,6 +37,7 @@ public class SampleTestOne {
       ltOptions.put("platformName", "Windows 10");
       ltOptions.put("seCdp", true);
       ltOptions.put("selenium_version", "4.23.0");
+      ltOptions.put("smartUI.project", "Sample");
       capabilities.setCapability("LT:Options", ltOptions);
 
       driver = new RemoteWebDriver(new URL(hubURL), capabilities);
@@ -47,6 +48,7 @@ public class SampleTestOne {
     String currentHandle= driver.getWindowHandle();
     WebDriverWait wait=new WebDriverWait(driver, 20);
     wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"__next\"]/div[1]/section[1]/div/div/div[1]/h1")));
+    ((JavascriptExecutor) driver).executeScript("smartui.takeScreenshot=home-page");
     ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(By.xpath("//*[@id=\"__next\"]/div[1]/section[8]/div/div/div/div/a")));
     driver.findElement(By.xpath("//*[@id=\"__next\"]/div[1]/section[8]/div/div/div/div/a")).sendKeys(Keys.chord(Keys.CONTROL,Keys.ENTER));
     Set<String> allWindowHandles = driver.getWindowHandles();
